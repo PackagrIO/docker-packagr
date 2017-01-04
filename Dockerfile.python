@@ -1,7 +1,22 @@
 FROM analogj/capsulecd-base
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
-RUN apk --update --no-cache add python python-dev py-pip && \
+ENV HOME=/root \
+	PROFILE=/root/.bash_profile \
+	PYENV_ROOT=/root/.pyenv \
+    PATH=/root/.pyenv/shims:/root/.pyenv/bin:$PATH
+
+# install pyenv & dependencies
+RUN apk --update --no-cache add bash patch && \
+	curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | sh
+
+RUN touch $PROFILE \
+ && echo 'export PATH="/root/.pyenv/bin:$PATH"' >> $PROFILE \
+ && echo 'eval "$(pyenv init -)"' >> $PROFILE \
+ && echo 'eval "$(pyenv virtualenv-init -)"' >> $PROFILE
+
+# install default python version (2.7.x) using pyenv and install capsulecd dependencies
+RUN pyenv install --verbose 2.7.12 && pyenv local 2.7.12 && \
 	pip install --upgrade pip setuptools tox
 
 CMD ["capsulecd", "start", "--source", "github", "--package_type", "python"]
