@@ -17,6 +17,6 @@ RUN touch $PROFILE \
 
 # install default python version (2.7.x) using pyenv and install capsulecd dependencies
 RUN pyenv install --verbose 2.7.12 && pyenv local 2.7.12 && \
-	pip install --upgrade pip setuptools tox
+	pip install --upgrade pip setuptools tox tox-pyenv
 
 CMD ["capsulecd", "start", "--source", "github", "--package_type", "python"]
