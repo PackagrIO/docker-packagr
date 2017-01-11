@@ -1,13 +1,18 @@
 FROM analogj/capsulecd-base
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
+# partially based off of http://stackoverflow.com/questions/32973975/why-isnt-pyenv-finding-openssl-shared-libraries-under-alpine-linux
+# https://github.com/docker-library/python/blob/master/3.4/alpine/Dockerfile
+
 ENV HOME=/root \
 	PROFILE=/root/.bash_profile \
 	PYENV_ROOT=/root/.pyenv \
     PATH=/root/.pyenv/shims:/root/.pyenv/bin:$PATH
+    LANG=C.UTF-8
 
 # install pyenv & dependencies
 RUN apk --update --no-cache add bash \
+	ca-certificates \
 	patch \
 	openssl-dev \
 	readline-dev \
