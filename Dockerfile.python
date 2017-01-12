@@ -7,7 +7,7 @@ MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 ENV HOME=/root \
 	PROFILE=/root/.bash_profile \
 	PYENV_ROOT=/root/.pyenv \
-    PATH=/root/.pyenv/shims:/root/.pyenv/bin:$PATH
+    PATH=/root/.pyenv/shims:/root/.pyenv/bin:$PATH \
     LANG=C.UTF-8
 
 # install pyenv & dependencies
