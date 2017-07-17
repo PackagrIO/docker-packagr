@@ -26,6 +26,10 @@ RUN touch $PROFILE \
  && echo 'eval "$(pyenv init -)"' >> $PROFILE \
  && echo 'eval "$(pyenv virtualenv-init -)"' >> $PROFILE
 
+# TODO: remove checksum skip. We're only doing this because we're getting invalid checksum mismatch errors (due to trailing space)
+ENV HAS_CHECKSUM_SUPPORT_compute_md5=false \
+	HAS_CHECKSUM_SUPPORT_compute_sha2=false
+
 # install default python version (2.7.x) using pyenv and install capsulecd dependencies
 RUN pyenv install --verbose 2.7.10 && pyenv global 2.7.10 && \
 	pip install --upgrade pip setuptools tox tox-pyenv twine
