@@ -3,7 +3,7 @@
 ## Python
 ##
 ##################################################
-FROM python:2.7 AS python
+FROM python:2.7
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd

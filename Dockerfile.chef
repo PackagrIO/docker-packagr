@@ -3,7 +3,7 @@
 ## ChefDK
 ##
 ##################################################
-FROM chef/chefdk AS chef
+FROM chef/chefdk
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd

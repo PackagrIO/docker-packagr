@@ -3,7 +3,7 @@
 ## Node
 ##
 ##################################################
-FROM node:8.2 AS node
+FROM node:8.2
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd

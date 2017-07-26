@@ -3,7 +3,7 @@
 ## Ruby
 ##
 ##################################################
-FROM ruby:2.4 AS ruby
+FROM ruby:2.4
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd
