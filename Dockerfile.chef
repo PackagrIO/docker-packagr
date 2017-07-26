@@ -1,25 +1,26 @@
-from ubuntu
-maintainer Jason Kulatunga <jk17@ualberta.ca>
+##################################################
+##
+## ChefDK
+##
+##################################################
+FROM chef/chefdk AS chef
+MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
-run apt-get update
-run apt-get install curl wget git make build-essential -y
+WORKDIR /srv/capsulecd
 
-run wget https://packages.chef.io/files/stable/chefdk/1.5.0/ubuntu/12.04/chefdk_1.5.0-1_amd64.deb
-run dpkg -i chefdk_1.5.0-1_amd64.deb
+RUN apt-get update && apt-get install -y --no-install-recommends \
+ 	apt-transport-https \
+    ca-certificates \
+    git \
+    curl \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& gem install bundler-audit
 
-# Make Chef DK the primary Ruby/Chef development environment.
-env PATH /opt/chefdk/bin:/root/.chefdk/gem/ruby/2.3.0/bin:/opt/chefdk/embedded/bin:$PATH
-env GEM_ROOT /opt/chefdk/embedded/lib/ruby/gems/2.3.0
-env GEM_HOME /root/.chefdk/gem/ruby/2.3.0
-env GEM_PATH /root/.chefdk/gem/ruby/2.3.0/opt/chefdk/embedded/lib/ruby/gems/2.3.0
+ENV PATH="/srv/capsulecd:/usr/local/go/bin:/root/.chefdk/gem/ruby/2.4.0/bin:${PATH}" \
+	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
-run which ruby
-run gem install bundler
+COPY ./capsulecd.sh .
 
-# copy the application files to the image
-workdir /srv/capsulecd
-run git clone https://github.com/AnalogJ/capsulecd.git .
+RUN ./capsulecd.sh
 
-run bundle install --with test --without node ruby python javascript
-run bundle exec rake spec:chef
-CMD ["bundle", "exec", "capsulecd", "start", "--runner", "circleci", "--source", "github", "--package_type", "chef"]
+CMD "capsulecd"

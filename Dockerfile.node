@@ -1,7 +1,27 @@
-FROM analogj/capsulecd-base
+##################################################
+##
+## Node
+##
+##################################################
+FROM node:8.2 AS node
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
-RUN apk --update --no-cache add nodejs && \
-    npm install -g bower
+WORKDIR /srv/capsulecd
 
-CMD ["capsulecd", "start", "--source", "github", "--package_type", "node"]
+RUN apt-get update && apt-get install -y --no-install-recommends \
+ 	apt-transport-https \
+    ca-certificates \
+    git \
+    curl \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& npm install -g eslint \
+	&& npm install -g nsp
+
+ENV PATH="/srv/capsulecd:${PATH}" \
+	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+COPY ./capsulecd.sh .
+
+RUN ./capsulecd.sh
+
+CMD "capsulecd"

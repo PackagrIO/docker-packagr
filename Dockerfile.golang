@@ -1,9 +1,9 @@
 ##################################################
 ##
-## Python
+## Golang
 ##
 ##################################################
-FROM python:2.7 AS python
+FROM golang:1.8 AS golang
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd
@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     git \
     curl \
-    pylint \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& pip install tox \
-	&& pip install safety \
-	&& pip install twine
+	&& go get -u gopkg.in/alecthomas/gometalinter.v1 \
+	&& gometalinter.v1 --install \
+	&& go get github.com/Masterminds/glide
+
 
 ENV PATH="/srv/capsulecd:${PATH}" \
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
