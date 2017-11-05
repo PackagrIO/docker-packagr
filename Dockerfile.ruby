@@ -22,9 +22,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV PATH="/srv/capsulecd:${PATH}" \
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
-	LANG en_US.UTF-8 \
-	LANGUAGE en_US:en \
-	LC_ALL en_US.UTF-8
+	LANG=en_US.UTF-8 \
+	LANGUAGE=en_US:en \
+	LC_ALL=en_US.UTF-8
 
 COPY ./capsulecd.sh .
 
