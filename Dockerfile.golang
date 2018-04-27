@@ -3,7 +3,7 @@
 ## Golang
 ##
 ##################################################
-FROM golang:1.8
+FROM golang:1.10
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd
