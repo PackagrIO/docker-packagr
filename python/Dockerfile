@@ -1,9 +1,10 @@
+ARG base_image
 ##################################################
 ##
 ## Python
 ##
 ##################################################
-FROM python:2.7
+FROM $base_image
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd
@@ -29,6 +30,7 @@ ENV PATH="/srv/capsulecd:${PATH}" \
 
 COPY ./capsulecd.sh .
 
-RUN ./capsulecd.sh
+ARG capsulecd_version
+RUN ./capsulecd.sh ${capsulecd_version}
 
 CMD "capsulecd"

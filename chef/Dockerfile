@@ -1,9 +1,10 @@
+ARG base_image
 ##################################################
 ##
-## Node
+## ChefDK
 ##
 ##################################################
-FROM node:8.2
+FROM $base_image
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd
@@ -13,13 +14,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     git \
     curl \
-	locales \
+    locales \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& locale-gen en_US.UTF-8 \
-	&& npm install -g eslint \
-	&& npm install -g nsp
+	&& gem install bundler-audit
 
-ENV PATH="/srv/capsulecd:${PATH}" \
+ENV PATH="/srv/capsulecd:/usr/local/go/bin:/root/.chefdk/gem/ruby/2.4.0/bin:${PATH}" \
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
@@ -27,6 +27,7 @@ ENV PATH="/srv/capsulecd:${PATH}" \
 
 COPY ./capsulecd.sh .
 
-RUN ./capsulecd.sh
+ARG capsulecd_version
+RUN ./capsulecd.sh ${capsulecd_version}
 
 CMD "capsulecd"
