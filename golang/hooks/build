@@ -16,8 +16,8 @@ do
             IMAGE_TAG="${IMAGE_TAG}${tag_version}"
         fi
 
-        echo "docker build -f Dockerfile --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} ."
-        docker build -f Dockerfile --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} .
+        echo "docker build -f Dockerfile --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} ../"
+        docker build -f Dockerfile --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} ../
     done
 done
 
