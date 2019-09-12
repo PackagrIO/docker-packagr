@@ -3,8 +3,6 @@
 HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # original docker build command
 echo "overwriting docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME ."
-pwd
-ls -alt
 
 cat "../versions.txt" | while read capsulecd_line
 do
@@ -18,8 +16,8 @@ do
             IMAGE_TAG="${IMAGE_TAG}${tag_version}"
         fi
 
-        echo "docker build -f $DOCKERFILE_PATH --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} ."
-        docker build -f $DOCKERFILE_PATH --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} .
+        echo "docker build -f Dockerfile --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} ."
+        docker build -f Dockerfile --build-arg base_image=${base_image} --build-arg capsulecd_version=${capsulecd_line} -t ${IMAGE_TAG} .
     done
 done
 
