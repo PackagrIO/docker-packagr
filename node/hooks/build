@@ -1,11 +1,14 @@
 #!/bin/bash
 
+HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # original docker build command
-echo "docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME ."
+echo "overwriting docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME ."
+pwd
+ls -alt
 
-cat "versions.txt" | while read capsulecd_line
+cat "../versions.txt" | while read capsulecd_line
 do
-    cat "$DOCKER_TAG/versions.txt" | while read language_line
+    cat "$HOOKS_DIR/versions.txt" | while read language_line
     do
         # split the language line into its two components, the version string to be used in the tag, and the actual docker base image.
         IFS=\  read tag_version base_image <<<"$language_line"
