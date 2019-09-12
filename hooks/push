@@ -1,0 +1,22 @@
+#!/bin/bash
+
+HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# original docker push command
+echo "overwriting docker push $IMAGE_NAME"
+
+cat "../versions.txt" | while read capsulecd_line
+do
+    cat "$HOOKS_DIR/versions.txt" | while read language_line
+    do
+        # split the language line into its two components, the version string to be used in the tag, and the actual docker base image.
+        IFS=\  read tag_version base_image <<<"$language_line"
+        IMAGE_TAG="${DOCKER_REPO}:${capsulecd_line}-${DOCKER_TAG}"
+
+        if [ "${tag_version}" != "latest" ]; then
+            IMAGE_TAG="${IMAGE_TAG}${tag_version}"
+        fi
+
+        echo "docker push ${IMAGE_TAG}"
+        docker push ${IMAGE_TAG}
+    done
+done
