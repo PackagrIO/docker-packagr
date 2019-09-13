@@ -1,5 +1,10 @@
 #!/bin/bash
 
+###############################################################################
+# WARNING
+# This is a symlinked file. The original lives at hooks/push in this repository
+###############################################################################
+
 HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # original docker push command
 echo "overwriting docker push $IMAGE_NAME"

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+###############################################################################
+# WARNING
+# This is a symlinked file. The original lives at hooks/build in this repository
+###############################################################################
+
 HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # original docker build command
 echo "overwriting docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME ."
