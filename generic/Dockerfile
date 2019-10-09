@@ -16,11 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
 	locales \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& locale-gen en_US.UTF-8 \
-	&& go get -u gopkg.in/alecthomas/gometalinter.v2 \
-	&& gometalinter.v2 --install \
-	&& go get github.com/Masterminds/glide \
-    && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+	&& locale-gen en_US.UTF-8
 
 
 ENV PATH="/srv/capsulecd:${PATH}" \
