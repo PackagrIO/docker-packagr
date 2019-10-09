@@ -1,0 +1,4 @@
+latest centos:latest
+8 centos:8
+7 centos:7
+6 centos:6

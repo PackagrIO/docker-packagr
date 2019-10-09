@@ -1,0 +1,4 @@
+latest alpine:latest
+3.10 alpine:3.10
+3.9 alpine:3.9
+3.8 alpine:3.8
