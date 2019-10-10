@@ -9,7 +9,7 @@ MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
 WORKDIR /srv/capsulecd
 
-RUN yum install \
+RUN yum install -y \
     ca-certificates \
     git \
     curl \
