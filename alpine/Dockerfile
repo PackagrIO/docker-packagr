@@ -13,6 +13,7 @@ RUN apk add --no-cache \
     ca-certificates \
     git \
     curl \
+    bash \
 	&& rm -rf /var/lib/apt/lists/*
 
 

@@ -13,6 +13,7 @@ asset_url=$(curl -s "${RELEASE_URL}" \
 	| grep browser_download_url | grep 'capsulecd-linux' | cut -d '"' -f 4)
 
 # download the capsulecd asset here.
+echo "curl -L -o capsulecd $asset_url"
 curl -L -o capsulecd $asset_url
 
 # make capsulecd executable
