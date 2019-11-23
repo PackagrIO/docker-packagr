@@ -13,7 +13,9 @@ We use a standardized tagging convention to ensure that version tracking is easy
 eg. `docker pull analogj/capsulecd:3.0.11-chefdk3.x`
 
 
-Here's a partial list of Docker image tags that are available for CapsuleCD
+Here's a partial list of Docker image tags that are available for CapsuleCD. You can find the full list of base images for each
+supported language and operating system by looking at the `hooks/versions.txt` file in each subdirectory.
+
 
 ## Alpine
 
@@ -78,6 +80,9 @@ Here's a partial list of Docker image tags that are available for CapsuleCD
 | latest | latest-ubuntu | latest-ubuntu19.10 | latest-ubuntu18.10 | latest-ubuntu16.04 |
 | 3.0.11 | 3.0.11-ubuntu | 3.0.11-ubuntu19.10 | 3.0.11-ubuntu18.10 | 3.0.11-ubuntu16.04 |
 | 3.0.10 | 3.0.10-ubuntu | 3.0.10-ubuntu19.10 | 3.0.10-ubuntu18.10 | 3.0.10-ubuntu16.04 |
+
+
+
 
 
 For docker hub setup, we need to make sure that the context is the root of the repo
