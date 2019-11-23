@@ -11,6 +11,7 @@ We use a standardized tagging convention to ensure that version tracking is easy
 `{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or ignored for `latest`}`
 
 Here's an example table containing the docker image tags containing CapsuleCD for Alpine
+
 | --- | Alpine latest | Alpine 3.10 | Alpine 3.9 | Apline 3.8 |
 | latest | latest-alpine | latest-alpine3.10 | latest-alpine-3.9 | latest-alpine3.8 |
 | 3.0.11 | 3.0.11-alpine | 3.0.11-alpine3.10 | 3.0.11-alpine-3.9 | 3.0.11-alpine3.8 |
