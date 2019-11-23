@@ -8,7 +8,7 @@ It uses a "matrix" style build, allowing us to provide multiple versions of Caps
 
 We use a standardized tagging convention to ensure that version tracking is easy:
 
-`{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or ignored for `latest`}`
+`{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or blank when latest}`
 
 eg. `docker pull analogj/capsulecd:3.0.11-chefdk3.x`
 
