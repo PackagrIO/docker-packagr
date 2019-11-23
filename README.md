@@ -1,6 +1,23 @@
-Tagging Convention:
+# Docker images for CapsuleCD
 
-`{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION}`
+This repo contains docker images that have CapusuleCD pre-installed.
+It uses a "matrix" style build, allowing us to provide multiple versions of CapsuleCD for multiple base OS's.
+
+
+# Tagging
+
+We use a standardized tagging convention to ensure that version tracking is easy:
+
+`{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or ignored for `latest`}`
+
+Here's an example table containing the docker image tags containing CapsuleCD for Alpine
+| --- | Alpine latest | Alpine 3.10 | Alpine 3.9 | Apline 3.8 |
+| latest | latest-alpine | latest-alpine3.10 | latest-alpine-3.9 | latest-alpine3.8 |
+| 3.0.11 | 3.0.11-alpine | 3.0.11-alpine3.10 | 3.0.11-alpine-3.9 | 3.0.11-alpine3.8 |
+| 3.0.10 | 3.0.10-alpine | 3.0.10-alpine3.10 | 3.0.10-alpine-3.9 | 3.0.10-alpine3.8 |
+
+
+
 
 
 For docker hub setup, we need to make sure that the context is the root of the repo
