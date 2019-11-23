@@ -10,6 +10,9 @@ We use a standardized tagging convention to ensure that version tracking is easy
 
 `{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or ignored for `latest`}`
 
+eg. `docker pull analogj/capsulecd:3.0.11-chefdk3.x`
+
+
 Here's a partial list of Docker image tags that are available for CapsuleCD
 
 ## Alpine
