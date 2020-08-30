@@ -7,7 +7,7 @@ ARG base_image
 FROM $base_image
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 
-WORKDIR /srv/capsulecd
+WORKDIR /srv/packagr
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
  	apt-transport-https \
@@ -19,15 +19,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& locale-gen en_US.UTF-8
 
 
-ENV PATH="/srv/capsulecd:${PATH}" \
+ENV PATH="/srv/packagr:${PATH}" \
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
 	LC_ALL=en_US.UTF-8
 
-COPY ./capsulecd.sh .
+COPY ./packagr.sh .
 
-ARG capsulecd_version
-RUN ./capsulecd.sh ${capsulecd_version}
+ARG packagr_version
+RUN ./packagr.sh ${packagr_version}
 
-CMD "capsulecd"
+CMD "packagr"

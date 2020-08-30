@@ -1,19 +1,19 @@
-# Docker images for CapsuleCD
+# Docker images for Packagr
 
-This repo contains docker images that have CapusuleCD pre-installed.
-It uses a "matrix" style build, allowing us to provide multiple versions of CapsuleCD for multiple base OS's.
+This repo contains docker images that have Packagr pre-installed.
+It uses a "matrix" style build, allowing us to provide multiple versions of Packagr for multiple base OS's.
 
 
 # Tagging
 
 We use a standardized tagging convention to ensure that version tracking is easy:
 
-`{CAPSULECD_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or blank when latest}`
+`{PACKAGR_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or blank when latest}`
 
-eg. `docker pull analogj/capsulecd:3.0.11-chefdk3.x`
+eg. `docker pull packagrio/packagr:3.0.11-chefdk3.x`
 
 
-Here's a partial list of Docker image tags that are available for CapsuleCD. You can find the full list of base images for each
+Here's a partial list of Docker image tags that are available for Packagr. You can find the full list of base images for each
 supported language and operating system by looking at the `hooks/versions.txt` file in each subdirectory.
 
 
@@ -96,7 +96,7 @@ and the dockerfile is located inside the repo
 - https://objectpartners.com/2017/09/20/docker-parameterized-builds-using-git-tags-part-1-of-2/
 - https://michalklempa.com/2019/03/publishing-docker-image-to-docker-hub-automated-builds/
 - https://medium.com/microscaling-systems/labelling-automated-builds-on-docker-hub-f3d073fb8e1
-- https://microbadger.com/images/analogj/capsulecd:python
+- https://microbadger.com/images/packagrio/packagr:python
 - https://www.rubdos.be/docker/2017/03/10/docker-hub-build-hooks.html
 - https://artsy.github.io/blog/2018/09/10/Dockerhub-Stamping-Commits/
 
