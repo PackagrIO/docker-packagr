@@ -63,7 +63,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: ${{ github.job }}
+          context: .
+          file: ${{ github.job }}/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ env.PACKAGR_VERSION }}-${{ github.job }}${{ matrix.version == 'latest' && '' || matrix.version }}
           labels: ${{ steps.meta.outputs.labels }}
