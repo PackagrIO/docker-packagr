@@ -59,7 +59,7 @@ jobs:
           context: .
           file: ${{ github.job }}/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.PACKAGR_VERSION }}-${{ github.job }}${{ matrix.version == 'latest' && '' || matrix.version }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.PACKAGR_VERSION }}-${{ github.job }}${{ matrix.version != 'latest' && matrix.version || '' }}
           build-args: |
             base_image=${{ matrix.image }}
             packagr_version=${{ env.PACKAGR_VERSION }}
