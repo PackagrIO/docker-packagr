@@ -67,6 +67,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ env.PACKAGR_VERSION }}-${{ github.job }}${{ matrix.version == 'latest' && '' || matrix.version }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args:
-            - base_image=${{ matrix.image }}
-            - packagr_version=${{ env.PACKAGR_VERSION }}
+          build-args: |
+            base_image=${{ matrix.image }}
+            packagr_version=${{ env.PACKAGR_VERSION }}
