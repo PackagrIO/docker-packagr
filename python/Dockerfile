@@ -7,7 +7,8 @@ ARG base_image
 FROM $base_image
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
 ENV PACKAGR_ENGINE_GIT_AUTHOR_NAME="packagrio-bot" \
-    PACKAGR_ENGINE_GIT_AUTHOR_EMAIL="packagr-io[bot]@users.noreply.github.com"
+    PACKAGR_ENGINE_GIT_AUTHOR_EMAIL="packagr-io[bot]@users.noreply.github.com" \
+    PACKAGR_PACKAGE_TYPE=python
 
 WORKDIR /srv/packagr
 
