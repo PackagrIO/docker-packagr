@@ -10,7 +10,7 @@ We use a standardized tagging convention to ensure that version tracking is easy
 
 `{PACKAGR_VERSION}-{LANGUAGE/ENGINE}{LANGUAGE_VERSION or blank when latest}`
 
-eg. `docker pull packagrio/packagr:3.0.11-chefdk3.x`
+eg. `docker pull ghcr.io/packagrio/packagr:3.0.11-chefdk3.x`
 
 
 Here's a partial list of Docker image tags that are available for Packagr. You can find the full list of base images for each
