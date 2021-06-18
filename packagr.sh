@@ -4,11 +4,11 @@
 # Bumpr
 ########################################################################################################################
 
-RELEASE_URL="https://api.github.com/repos/packagrio/bumpr/releases/"
+export RELEASE_URL="https://api.github.com/repos/packagrio/bumpr/releases/"
 if [ "${1}" == "latest" ]; then
-    RELEASE_URL="${RELEASE_URL}${1}"
+    export RELEASE_URL="${RELEASE_URL}${1}"
 else
-    RELEASE_URL="${RELEASE_URL}tags/v${1}"
+    export RELEASE_URL="${RELEASE_URL}tags/v${1}"
 fi
 
 asset_url=$(curl -s "${RELEASE_URL}" \
@@ -25,11 +25,11 @@ chmod +x packagr-bumpr
 # Releasr
 ########################################################################################################################
 
-RELEASE_URL="https://api.github.com/repos/packagrio/releasr/releases/"
+export RELEASE_URL="https://api.github.com/repos/packagrio/releasr/releases/"
 if [ "${1}" == "latest" ]; then
-    RELEASE_URL="${RELEASE_URL}${1}"
+    export RELEASE_URL="${RELEASE_URL}${1}"
 else
-    RELEASE_URL="${RELEASE_URL}tags/v${1}"
+    export RELEASE_URL="${RELEASE_URL}tags/v${1}"
 fi
 
 asset_url=$(curl -s "${RELEASE_URL}" \
@@ -47,11 +47,11 @@ chmod +x packagr-releasr
 # Publishr
 ########################################################################################################################
 
-RELEASE_URL="https://api.github.com/repos/packagrio/publishr/releases/"
+export RELEASE_URL="https://api.github.com/repos/packagrio/publishr/releases/"
 if [ "${1}" == "latest" ]; then
-    RELEASE_URL="${RELEASE_URL}${1}"
+    export RELEASE_URL="${RELEASE_URL}${1}"
 else
-    RELEASE_URL="${RELEASE_URL}tags/v${1}"
+    export RELEASE_URL="${RELEASE_URL}tags/v${1}"
 fi
 
 asset_url=$(curl -s "${RELEASE_URL}" \
