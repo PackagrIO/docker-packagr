@@ -6,6 +6,8 @@ ARG base_image
 ##################################################
 FROM $base_image
 MAINTAINER Jason Kulatunga <jason@thesparktree.com>
+ENV PACKAGR_ENGINE_GIT_AUTHOR_NAME="packagr-io" \
+    PACKAGR_ENGINE_GIT_AUTHOR_EMAIL="packagr-io[bot]@users.noreply.github.com"
 
 WORKDIR /srv/packagr
 
