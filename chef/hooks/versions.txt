@@ -1,4 +1,0 @@
-latest chef/chefdk:latest
-3.x chef/chefdk:3.11.4
-2.x chef/chefdk:2.3.17
-1.x chef/chefdk:1.6.1

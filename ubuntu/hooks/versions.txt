@@ -1,4 +1,0 @@
-latest ubuntu:latest
-19.10 ubuntu:19.10
-18.10 ubuntu:18.10
-16.04 ubuntu:16.04
