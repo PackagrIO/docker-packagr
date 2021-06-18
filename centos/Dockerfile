@@ -17,7 +17,6 @@ RUN yum install -y \
 
 
 ENV PATH="/srv/packagr:${PATH}" \
-	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
 	LC_ALL=en_US.UTF-8
