@@ -16,9 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
 	locales \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& locale-gen en_US.UTF-8 \
-	&& go get -u gopkg.in/alecthomas/gometalinter.v2 \
-	&& gometalinter.v2 --install
+	&& locale-gen en_US.UTF-8 
 
 ENV PATH="/srv/packagr:${PATH}" \
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
