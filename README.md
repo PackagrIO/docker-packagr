@@ -38,31 +38,31 @@ supported language and operating system by looking at the `hooks/versions.txt` f
 ## Golang
 
 | | Golang latest | Golang 1.13 | Golang 1.12 |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | latest | latest-golang | latest-golang1.13 | latest-golang1.12 |
 
 ## Node
 
 | | Node latest | Node 12 | Node 10 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | latest | latest-node | latest-node12 | latest-node10 |
 
 ## Python
 
 | | Python latest | Python 3.7 | Python 2.7 |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | latest | latest-python | latest-python3.7 | latest-python2.7 |
 
 ## Ruby
 
 | | Ruby latest | Ruby 2.6 | Ruby 2.5 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | latest | latest-ruby | latest-ruby2.6 | latest-ruby2.5 |
 
 ## Ubuntu
 
 | | Ubuntu latest | Ubuntu 19.10 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- |
 | latest | latest-ubuntu | latest-ubuntu20.10 |
 
 
