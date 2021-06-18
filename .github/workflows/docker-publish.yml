@@ -77,8 +77,6 @@ jobs:
             image: 'centos:8'
           - version: '7'
             image: 'centos:7'
-          - version: '6'
-            image: 'centos:6'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -237,8 +235,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'python:latest'
-          - version: '3.12'
-            image: 'python:3.12'
+          - version: '3.10'
+            image: 'python:3.10'
           - version: '3.7'
             image: 'python:3.7'
           - version: '2.7'
@@ -321,10 +319,6 @@ jobs:
             image: 'ubuntu:latest'
           - version: '20.10'
             image: 'ubuntu:20.10'
-          - version: '19.10'
-            image: 'ubuntu:19.10'
-          - version: '18.04'
-            image: 'ubuntu:18.04'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2

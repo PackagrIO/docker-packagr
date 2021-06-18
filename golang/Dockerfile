@@ -18,10 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& locale-gen en_US.UTF-8 \
 	&& go get -u gopkg.in/alecthomas/gometalinter.v2 \
-	&& gometalinter.v2 --install \
-	&& go get github.com/Masterminds/glide \
-    && curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-
+	&& gometalinter.v2 --install
 
 ENV PATH="/srv/packagr:${PATH}" \
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
