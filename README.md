@@ -61,9 +61,9 @@ supported language and operating system by looking at the `hooks/versions.txt` f
 
 ## Ubuntu
 
-| | Ubuntu latest | Ubuntu 19.10 |
+| | Ubuntu latest | Ubuntu 21.10 |
 | --- | --- | --- |
-| latest | latest-ubuntu | latest-ubuntu20.10 |
+| latest | latest-ubuntu | latest-ubuntu21.10 |
 
 
 # References

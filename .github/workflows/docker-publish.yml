@@ -70,44 +70,6 @@ jobs:
           build-args: |
             base_image=${{ matrix.image }}
             packagr_version=${{ env.PACKAGR_VERSION }}
-  rockylinux:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    strategy:
-      matrix:
-        include:
-          - version: 'latest'
-            image: 'rockylinux:latest'
-          - version: '8'
-            image: 'rockylinux:8'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Login against a Docker registry except on PR
-      # https://github.com/docker/login-action
-      - name: Log into registry ${{ env.REGISTRY }}
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v1
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-
-      # Build and push Docker image with Buildx (don't push on PR)
-      # https://github.com/docker/build-push-action
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ${{ github.job }}/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.PACKAGR_VERSION }}-${{ github.job }}${{ matrix.version != 'latest' && matrix.version || '' }}
-          build-args: |
-            base_image=${{ matrix.image }}
-            packagr_version=${{ env.PACKAGR_VERSION }}
   chef:
     runs-on: ubuntu-latest
     permissions:
@@ -270,6 +232,44 @@ jobs:
           build-args: |
             base_image=${{ matrix.image }}
             packagr_version=${{ env.PACKAGR_VERSION }}
+  rockylinux:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        include:
+          - version: 'latest'
+            image: 'rockylinux:latest'
+          - version: '8'
+            image: 'rockylinux:8'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Login against a Docker registry except on PR
+      # https://github.com/docker/login-action
+      - name: Log into registry ${{ env.REGISTRY }}
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+
+      # Build and push Docker image with Buildx (don't push on PR)
+      # https://github.com/docker/build-push-action
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ${{ github.job }}/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.PACKAGR_VERSION }}-${{ github.job }}${{ matrix.version != 'latest' && matrix.version || '' }}
+          build-args: |
+            base_image=${{ matrix.image }}
+            packagr_version=${{ env.PACKAGR_VERSION }}
   ruby:
     runs-on: ubuntu-latest
     permissions:
@@ -320,8 +320,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'ubuntu:latest'
-          - version: '20.10'
-            image: 'ubuntu:20.10'
+          - version: '21.10'
+            image: 'ubuntu:21.10'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
