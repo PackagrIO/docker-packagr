@@ -70,7 +70,7 @@ jobs:
           build-args: |
             base_image=${{ matrix.image }}
             packagr_version=${{ env.PACKAGR_VERSION }}
-  centos:
+  rockylinux:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -79,11 +79,9 @@ jobs:
       matrix:
         include:
           - version: 'latest'
-            image: 'centos:latest'
+            image: 'rockylinux:latest'
           - version: '8'
-            image: 'centos:8'
-          - version: '7'
-            image: 'centos:7'
+            image: 'rockylinux:8'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2

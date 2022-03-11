@@ -23,12 +23,6 @@ supported language and operating system by looking at the `hooks/versions.txt` f
 | --- | --- | --- | --- | --- |
 | latest | latest-alpine | latest-alpine3.10 | latest-alpine3.9 | latest-alpine3.8 |
 
-## Centos
-
-| | Centos latest | Centos 8 | Centos 7 |
-| --- | --- | --- | --- |
-| latest | latest-centos | latest-centos8 | latest-centos7 |
-
 ## Chef
 
 | | ChefDK latest | ChefDK 3.11.4 | ChefDK 2.3.17 | ChefDK 1.6.1 |
@@ -53,6 +47,12 @@ supported language and operating system by looking at the `hooks/versions.txt` f
 | --- | --- | --- | --- | 
 | latest | latest-python | latest-python3.7 | latest-python2.7 |
 
+## Rocky Linux (Centos/RHEL alternative)
+
+| | Rocky latest | Rocky 8 |
+| --- | --- | --- |
+| latest | latest-centos | latest-centos8 |
+
 ## Ruby
 
 | | Ruby latest | Ruby 2.6 | Ruby 2.5 |
@@ -67,6 +67,7 @@ supported language and operating system by looking at the `hooks/versions.txt` f
 
 
 # References
+
 - https://docs.docker.com/docker-hub/builds/advanced/
 - https://gist.github.com/rossf7/664dc1eb02f514993c7215d37058965c
 - https://forums.docker.com/t/docker-cloud-build-environment-variables-not-being-passed-to-the-auto-build/24010/2
