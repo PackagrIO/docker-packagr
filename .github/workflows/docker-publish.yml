@@ -122,6 +122,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'golang:latest'
+          - version: '1.17'
+            image: 'golang:1.17'
           - version: '1.13'
             image: 'golang:1.13'
           - version: '1.12'
