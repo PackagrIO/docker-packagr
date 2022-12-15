@@ -164,6 +164,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'node:latest'
+          - version: '18'
+            image: 'node:18'
           - version: '12'
             image: 'node:12'
           - version: '10'
