@@ -14,7 +14,6 @@ WORKDIR /srv/packagr
 RUN yum install -y \
     ca-certificates \
     git \
-    curl \
 	&& rm -rf /var/lib/apt/lists/*
 
 
