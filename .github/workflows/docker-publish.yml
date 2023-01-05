@@ -245,7 +245,9 @@ jobs:
       matrix:
         include:
           - version: 'latest'
-            image: 'rockylinux:latest'
+            image: 'rockylinux:9'
+          - version: '9'
+            image: 'rockylinux:9'
           - version: '8'
             image: 'rockylinux:8'
     steps:
@@ -284,10 +286,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'ruby:latest'
-          - version: '2.6'
-            image: 'ruby:2.6'
-          - version: '2.5'
-            image: 'ruby:2.5'
+          - version: '2.7'
+            image: 'ruby:2.7'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -324,8 +324,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'ubuntu:latest'
-          - version: '21.10'
-            image: 'ubuntu:21.10'
+          - version: '22.10'
+            image: 'ubuntu:22.10'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
