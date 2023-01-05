@@ -11,12 +11,12 @@ function download_github_release_asset {
       export RELEASE_URL="${RELEASE_URL}tags/v${1}"
   fi
 
-  export asset_url=$(curl -s "${RELEASE_URL}" \
+  export ASSET_URL=$(curl -s "${RELEASE_URL}" \
     | grep browser_download_url | grep "packagr-${2}-linux" | cut -d '"' -f 4)
 
   # download the tool asset here.
-  echo "curl -L -o packagr-${2} $asset_url"
-  curl -L -o "packagr-${2}" $asset_url
+  echo "curl -L -o packagr-${2} ${ASSET_URL}"
+  curl -L -o "packagr-${2}" "${ASSET_URL}"
 
   # make tool executable
   chmod +x "packagr-${2}"
