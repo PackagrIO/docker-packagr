@@ -120,12 +120,12 @@ jobs:
         include:
           - version: 'latest'
             image: 'golang:latest'
+          - version: '1.18'
+            image: 'golang:1.18'
           - version: '1.17'
             image: 'golang:1.17'
-          - version: '1.13'
-            image: 'golang:1.13'
-          - version: '1.12'
-            image: 'golang:1.12'
+          - version: '1.16'
+            image: 'golang:1.16'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
