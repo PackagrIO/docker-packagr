@@ -166,8 +166,6 @@ jobs:
             image: 'node:18'
           - version: '16'
             image: 'node:16'
-          - version: '14'
-            image: 'node:14'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
