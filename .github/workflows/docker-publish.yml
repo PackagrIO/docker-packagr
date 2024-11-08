@@ -120,6 +120,8 @@ jobs:
         include:
           - version: 'latest'
             image: 'golang:latest'
+          - version: '1.22'
+            image: 'golang:1.22'
           - version: '1.18'
             image: 'golang:1.18'
           - version: '1.17'
