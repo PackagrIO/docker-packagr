@@ -322,8 +322,7 @@ jobs:
         include:
           - version: 'latest'
             image: 'ubuntu:latest'
-          - version: '22.10'
-            image: 'ubuntu:22.10'
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
