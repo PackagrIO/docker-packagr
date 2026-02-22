@@ -134,8 +134,8 @@ jobs:
             image: 'golang:1.24'
           - version: '1.25'
             image: 'golang:1.25'
-          - version: '1.26'
-            image: 'golang:1.26'
+          # - version: '1.26'
+          #   image: 'golang:1.26'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -172,10 +172,12 @@ jobs:
         include:
           - version: 'latest'
             image: 'node:latest'
-          - version: '18'
-            image: 'node:18'
-          - version: '16'
-            image: 'node:16'
+          - version: '22'
+            image: 'node:22'
+          - version: '24'
+            image: 'node:24'
+          # - version: '16'
+          #   image: 'node:16'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
